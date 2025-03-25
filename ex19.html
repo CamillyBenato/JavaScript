@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fatorial</title>
+</head>
+<body>
+    <label for="num">Digite um número</label>
+    <input type="number" id="num">
+    <button type="button" onclick="fatorial()">Verificar</button>
+    <p id="resultado"></p>
+
+    <script>
+        function fatorial() {
+            let num = document.getElementById("num").value;
+            num = parseInt(num);
+            let resultado = 1;
+
+            for (let i = 1; i <= num; i++){
+                resultado *= i;
+            }
+
+            document.getElementById("resultado").innerText = "Fatorial " + num + ": " + resultado
+        }
+            
+    </script>
+</body>
+</html>
