@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Função para inverter uma string</title>
+</head>
+<body>
+    <label for="palavra">Digite uma palavra: </label>
+    <input type="text" id="palavra">
+    <button onclick="inverter()">Inverter</button>
+    <p id="resultado"></p>
+
+    <script>
+        function inverter() {
+            var palavra = document.getElementById("palavra").value;  // Pega o valor digitado no input
+            var splitString = palavra.split("");  // ["h", "e", "l", "l", "o"]
+            var reverseArray = splitString.reverse();  // ["o", "l", "l", "e", "h"]
+            var joinArray = reverseArray.join("");  // Junta o array invertido de volta em uma string "olleh"
+
+            document.getElementById("resultado").innerText = "Inversão: " + joinArray;  // Exibe o resultado
+        }
+    </script>
+
+</body>
+</html>
