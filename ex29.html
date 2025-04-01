@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números Multiplos de 5 (1 a 100)</title>
+</head>
+<body>
+    <h1>Números Multiplos de 5</h1>
+    <div id="resultado"></div>
+
+    <script>
+        let resultadoDiv = document.getElementById("resultado");
+        let numerosMultiplos = "";
+
+        let contador = 1;
+        do{
+            if(contador % 5 == 0){
+                numerosMultiplos += contador + "<br>";
+            }
+            contador ++;
+        } while (contador <= 100);
+
+        resultadoDiv.innerHTML = numerosMultiplos;
+
+
+    </script>
+</body>
+</html>
