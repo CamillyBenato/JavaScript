@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mudar Cor de Fundo</title>
+</head>
+<body>
+    <h1>Mudar Cor de Fundo</h1>
+    <div id="meuDiv" style="width: 100px; height: 100px; background-color: aquamarine;">Passe o Mouse Aqui</div>
+
+    <script>
+        const div = document.getElementById('meuDiv');
+
+        //Manipulando o evento mouseover
+        div.addEventListener('mouseover', function(){
+            div.style.backgroundColor = "lightgreen"; //Muda a cor de fundo
+        });
+
+        //Manipulando o evento mouseout
+        div.addEventListener("mouseout", function(){
+            div.style.backgroundColor = "aquamarine"; //Restaura a cor de fundo
+        });
+    </script>
+</body>
+</html>
