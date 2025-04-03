@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retornar um Array com o número ao Quadrado</title>
+</head>
+<body>
+    
+    <h1>Retornar um Array com o número ao Quadrado</h1>
+    
+    <label for="num">Digite números (Separe por vírgulas): </label>
+    <input type="text" id="num" placeholder="Ex: 10,20,30,40,50">  
+    <button onclick="mostrarResultado()">Calcular</button>
+    <p id="resultado"></p>
+
+    <script>
+        // Função que recebe um array de strings e retorna um novo array 
+        const quadradoNum = (nums) => {
+            return nums.map(num => num*num); 
+        };
+
+        // Função para pegar as palavras, contar as letras e mostrar o resultado
+        const mostrarResultado = () => {
+            const input = document.getElementById("num").value;  // Pega o que você escreveu
+            const nums = input.split(",").map(str => parseFloat(str.trim()));  // Separa os números e converte para número
+
+            document.getElementById("resultado").innerHTML = `Quadrado dos Números: ${quadradoNum(nums).join(", ")}`; //Juntar os elementos do Array em uma ÚNICA String (.join)
+        };
+    </script>
+    
+</body>
+</html>
