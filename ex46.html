@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+ <html lang="pt-br">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Crie uma função que receba um array de objetos (cada objeto com as propriedades "nome" e "salário") e retorne o nome da pessoa com o maior salário.</title>
+ </head> 
+ <body>
+ 
+     <h1>Digite o Nome e o Salário (Separados por vírgula):</h1>
+     <input type="text" id="pessoa" placeholder="Ex: Camilly,2000, Julia,1200">
+     <button type="button" onclick="filtrarPessoas()">Enviar</button>
+ 
+     <p id="resultado"></p>
+ 
+     <script>
+         function filtrarPessoas() {
+             let input = document.getElementById("pessoa").value;
+             let pessoasArray = input.split(","); 
+             let pessoas = [];
+             let maiorSalario = -Infinity;
+             let pessoaComMaiorSalario = "";
+ 
+ 
+             for (let i = 0; i < pessoasArray.length; i += 2) {
+                 let nome = pessoasArray[i];
+                 let salario = parseFloat(pessoasArray[i + 1]);
+ 
+ 
+                 pessoas.push({
+                     nome: nome,
+                     salario: salario
+                 });
+ 
+                 if (salario > maiorSalario) {
+                     maiorSalario = salario;
+                     pessoaComMaiorSalario = nome;
+                 }
+             }
+ 
+             document.getElementById("resultado").innerText = `A pessoa com o maior salário é: ${pessoaComMaiorSalario}`;
+         }
+     </script>
+ 
+ </body>
+ </html>

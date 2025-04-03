@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+ <html lang="pt-br">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Escreva uma função que receba um array de strings e retorne um novo array com as strings em ordem alfabética.</title>
+ </head> 
+ <body>
+ 
+     <h1>Digite as Frases (Separadas por vírgula):</h1>
+     <input type="text" id="frase" placeholder="Ex: Celular Legal, Dia Lindo">
+     <button type="button" onclick="ordemAlfabetica()">Enviar</button>
+ 
+     <p id="resultado"></p>
+ 
+     <script>
+         const ordemAlfabetica = () => {
+             ordemcerta = document.getElementById("frase").value.split(",").map(str => str.trim());
+             ordemcerta.sort()
+ 
+             document.getElementById("resultado").innerText = "Ordem alfabética: " + ordemcerta.join(", ");
+ }
+         
+    </script>
+</body>
+</html>

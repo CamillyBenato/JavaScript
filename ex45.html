@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implemente uma função que receba um array de números e retorne a média dos números ímpares.</title>
+</head>
+<body>
+
+    <h1 for="num">Digite os Números (Separados por vírgulas):</h1>
+    <input type="text" id="num" placeholder="Ex: 1,2,3,4,5,6">
+    <button onclick="calcular()">Calcular</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcular() {
+            let input = document.getElementById("num").value; 
+            let num = input.split(",").map(Number); // Converte a string em números
+            let soma = 0;
+            let contador = 0; // Contador para números ímpares
+
+            // Loop para percorrer os números e somar os ímpares
+            for (let i = 0; i < num.length; i++) {
+                if (num[i] % 2 !== 0) { // Verifica se o número é ímpar
+                    soma += num[i];
+                    contador++; // Aumenta o contador para números ímpares
+                }
+            }
+
+            // Calcular a média dos números ímpares
+            if (contador > 0) { // Evita divisão por zero
+                let media = soma / contador;
+                document.getElementById("resultado").innerText = `A média dos ímpares é: ${media}`;
+            } else {
+                document.getElementById("resultado").innerText = "Não há números ímpares na lista.";
+            }
+        }
+    </script>
+
+</body>
+</html>
