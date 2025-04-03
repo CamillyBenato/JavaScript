@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Função que receba um array de números e retorne a soma de todos os elementos pares</title>
+</head>
+<body>
+    <label for="pessoa">Digite o Nome e Idade (Separados por vírgula): </label>
+    <input type="text" id="pessoa" placeholder="Ex: Eva,21, Maria,30, Fernanda,25">
+    <button onclick="filtrar()">Calcular</button>
+    <p id="resultado"></p>
+
+    <script>
+        const filtrar = () => {
+            const input = document.getElementById("pessoa").value;
+            const separar = input.split(','); //Separa o nome e a idade
+            const pessoas = [];
+
+            //Preenche o array de pessoas com objetos contendo nome e idade
+            for (let i = 0; i < separar.length; i += 2) {
+                pessoas.push({
+                    nome: separar[i],
+                    idade: parseInt(separar[i + 1])
+                });
+            }
+
+            //Filtra as pessoas com idade maior que 18
+            const filtrar = pessoas.filter(pessoa => pessoa.idade > 18); 
+
+            //Exibe os nomes das pessoas com mais de 18 anos
+            document.getElementById("resultado").innerText = `Pessoas com mais de 18 anos: [${filtrar.map(pessoa => pessoa.nome).join(", ")}]`;
+        };
+    </script>
+</body>
+</html>
