@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Função que receba um array de números e retorne a soma de todos os elementos pares</title>
+</head>
+<body>
+    <label for="num">Digite números (Separe por vírgulas): </label>
+    <input type="text" id="num" placeholder="Ex: 10,20,30,40,50">
+    <button onclick="somaPares()">Calcular</button>
+    <p id="resultado"></p>
+
+    <script>
+        const somaPares = () => {
+            const input = document.getElementById("num").value;
+            const num = input.split(',').map(num => parseFloat(num.trim())); //String para Array
+
+            const pares = num.filter(num => num % 2 === 0); //Filtra os números pares
+            
+            if (pares.length > 0) {
+                const soma = pares.reduce((acc, pares) => acc + pares, 0);
+                document.getElementById("resultado").innerHTML = "Soma Pares = " + soma;
+            } else {
+                document.getElementById("resultado").innerHTML = "Não há números pares.";
+            }   
+        }
+    </script>
+</body>
+</html>
+
