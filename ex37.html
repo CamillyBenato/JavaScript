@@ -19,7 +19,7 @@
             const pares = num.filter(num => num % 2 === 0); //Filtra os números pares
             
             if (pares.length > 0) {
-                const soma = pares.reduce((acc, pares) => acc + pares, 0);
+                const soma = pares.reduce((acc, pares) => acc + pares, 0); //.reduce() = reduzir // acc = mantém o valor acumulado de cada interação
                 document.getElementById("resultado").innerHTML = "Soma Pares = " + soma;
             } else {
                 document.getElementById("resultado").innerHTML = "Não há números pares.";
